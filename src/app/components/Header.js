@@ -3,12 +3,12 @@ import { userInfo } from "os";
 // making the component and exporting it
 class Header extends Component{
     constructor(props){
-        super();
+        console.log("Hello from constructor");
+        super(props)
         this.state={ 
             age: props.age,
             status: 0
         }
-        console.log("Hello from constructor");
     }
     static getDerivedStateFromProps(){
         console.log("Hello before rendering");
@@ -23,6 +23,7 @@ class Header extends Component{
      }
 
     render(){
+        console.log("hello from render");
         console.log(this.props);
         return(
             <nav className="navbar navbar-default bg-danger">
