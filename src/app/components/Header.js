@@ -8,12 +8,20 @@ class Header extends Component{
             age: props.age,
             status: 0
         }
+        console.log("Hello from constructor");
+    }
+    static getDerivedStateFromProps(){
+        console.log("Hello before rendering");
+    }
+    componentDidMount(){
+        console.log("Hello after mounting");
     }
     onMakeOlder(){
-       this.setState({
-           age: this.state.age +3
-       })
-    }
+        this.setState({
+            age: this.state.age +3
+        })
+     }
+
     render(){
         console.log(this.props);
         return(
@@ -28,11 +36,11 @@ class Header extends Component{
                             {/* <p>{this.props.gretting}</p> */}
                             <hr/>
                         </ul>
-                        {/* <img src={this.props.user.avatarUrl}/> */}
-                        {/* <h4>Your Hobbies are</h4>
+                        <img src={this.props.user.avatarUrl}/>
+                        <h4>Your Hobbies are</h4>
                         <ul>
                             {this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
-                        </ul> */}
+                        </ul>
                         <hr/>
                     </div>
                 </div>

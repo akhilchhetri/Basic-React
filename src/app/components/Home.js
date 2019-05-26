@@ -4,11 +4,10 @@ import React, {Component} from "react";
 class Home extends Component{
     render(){
         return(
-            <div className="bg-light">
+            <div className="bg-primary">
                 <p>This is the Home Component</p>
             </div>
         );
     }
 }
 // expoting the Class Home created above which extends Component
-export default Home;
