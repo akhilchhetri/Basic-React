@@ -1,13 +1,12 @@
 import React, {Component} from "react";
-import { userInfo } from "os";
+import { userInfo, homedir } from "os";
 // making the component and exporting it
 class Header extends Component{
     constructor(props){
         console.log("Hello from constructor");
         super(props)
         this.state={ 
-            age: props.age,
-            status: 0
+            age: props.age
         }
     }
     static getDerivedStateFromProps(){
@@ -30,10 +29,9 @@ class Header extends Component{
                 <div className="container">
                     <div className="navbar-header">
                         <ul className="nav navbar-nav">
-                            <li>This is header Component</li>
+                            <h1>This is header Component</h1>
                             <p> Hey, {this.props.user.firstname}</p>
                             <p>Your age is {this.state.age}</p>
-                            <p>Status: {this.state.status}</p>
                             {/* <p>{this.props.gretting}</p> */}
                             <hr/>
                         </ul>
@@ -47,6 +45,7 @@ class Header extends Component{
                 </div>
               {/* Here i am going to make a button  */}
               <button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">Make me older !!</button>
+              <button className="btn btn-primary" onClick={this.props.greet}>Greet</button>
             </nav>
         );
     }

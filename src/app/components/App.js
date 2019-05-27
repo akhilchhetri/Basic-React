@@ -16,6 +16,7 @@ const user={
     hobbies:['cricket', 'footballl', 'coding', 'travelling']
 }
 
+
 // function getgretting
 function getgretting(user){
     if(user){
@@ -30,13 +31,22 @@ function getgretting(user){
 }
 //creating App component
 class App extends Component{
+    // function onGreet
+    onGreet(){
+        alert("Hello");
+    }
     render(){
        return(
         <div>
             <div className="container">
+                 <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        <Home/>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header age={15} user={user} gretting={getgretting(user)}/>
+                        <Header age={15} user={user} gretting={getgretting(user)} greet={this.onGreet}/>
                     </div>
                 </div>
             </div>
