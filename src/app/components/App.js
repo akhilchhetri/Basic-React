@@ -16,37 +16,42 @@ const user={
     hobbies:['cricket', 'footballl', 'coding', 'travelling']
 }
 
-
-// function getgretting
-function getgretting(user){
-    if(user){
-        return (
-            <div>
-                <h1>Welcome, {formatName(user)}</h1>
-                <Home/>
-            </div>
-        );
-    }
-    return <h1>Welcome, Unknown User !! :P</h1>
-}
 //creating App component
 class App extends Component{
+    // Constructor is needed for App component to save the state 
+    constructor(){
+        super();
+        this.state={
+            homeLink:"Home"
+        };
+    }
     // function onGreet
     onGreet(){
         alert("Hello");
     }
+    onChangeLinkName(newName){
+        this.setState({
+            homeLink:newName
+        });
+    }
+    // render function
     render(){
        return(
         <div>
             <div className="container">
                  <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home/>
+                        <Header homeLink={this.state.homeLink}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header age={15} user={user} gretting={getgretting(user)} greet={this.onGreet}/>
+                        <Home 
+                            age={15} 
+                            user={user}
+                            greet={this.onGreet}
+                            changeLink={this.onChangeLinkName.bind(this)}
+                            />
                     </div>
                 </div>
             </div>
