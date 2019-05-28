@@ -8,7 +8,7 @@ class Home extends Component{
         super()
         this.state={ 
             age: props.age,
-            homeLink:"Changed Link"
+            homeLink:props.initialLinkName
         }
     }
     static getDerivedStateFromProps(){
@@ -22,9 +22,16 @@ class Home extends Component{
             age: this.state.age +3
         })
      }
+    // on Change Event
      onChangeLink(){
          this.props.changeLink(this.state.homeLink)
      }
+    //  onChange the Input value
+    onHandleChange(Event){
+        this.setState({
+            homeLink:Event.target.value
+        });
+    }
     render(){
         console.log("hello from render");
         console.log(this.props);
@@ -50,6 +57,9 @@ class Home extends Component{
               {/* Here i am going to make a button  */}
               <button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">Make me older !!</button>
               <button className="btn btn-primary" onClick={this.props.greet}>Greet</button>
+              <hr/>
+              <input type="text" value={this.state.homeLink} onChange={()=>{
+                  this.onHandleChange(event) }}/>
               <hr/>
               <button className="btn btn-primary" onClick={this.onChangeLink.bind(this)}>Change Header Link</button>
             </nav>

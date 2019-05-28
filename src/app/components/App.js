@@ -51,6 +51,7 @@ class App extends Component{
                             user={user}
                             greet={this.onGreet}
                             changeLink={this.onChangeLinkName.bind(this)}
+                            initialLinkName={this.state.homeLink}
                             />
                     </div>
                 </div>
