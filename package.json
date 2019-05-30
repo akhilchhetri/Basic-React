@@ -4,7 +4,7 @@
   "description": "reactjs",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "build": "webpack --mode production"
   },
   "keywords": [
@@ -13,6 +13,7 @@
   "author": "Akhil",
   "license": "MIT",
   "dependencies": {
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0"

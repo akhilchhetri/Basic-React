@@ -40,7 +40,7 @@ class Home extends Component{
                 <div className="container">
                     <div className="navbar-header">
                         <ul className="nav navbar-nav">
-                            <h1>This is Home Component</h1>
+                            <h4><u>This is Home Component</u></h4>
                             <p> Hey, {this.props.user.firstname}</p>
                             <p>Your age is {this.state.age}</p>
                             {/* <p>{this.props.gretting}</p> */}

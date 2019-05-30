@@ -12,11 +12,22 @@ class Header extends Component{
         return(
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
+                    <div className="col-xs-12 col-xs-offset-1">
                         <h1>{this.props.homeLink}</h1>
                     </div>
                 </div>
-            </div> 
+                <nav className="navbar navbar-default">
+                    <div className="container">
+                        <div className="navbar-header">
+                            <ul className="nav navbar-nav">
+                                <li className=""><a href="">Home</a></li>
+                                <li className=""><a href="">User</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+          
         );
     }
 }
