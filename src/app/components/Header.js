@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom"
+// import { linkSync } from "fs";
 
 // Creating the class for component Home that extends the Component
 class Header extends Component{
@@ -20,8 +22,12 @@ class Header extends Component{
                     <div className="container">
                         <div className="navbar-header">
                             <ul className="nav navbar-nav">
-                                <li className=""><a href="">Home</a></li>
-                                <li className=""><a href="">User</a></li>
+                            <Link to="/user">
+                                <li className="">User</li>
+                            </Link>
+                            <Link to="/about">
+                                <li className="">About</li>
+                            </Link>
                             </ul>
                         </div>
                     </div>

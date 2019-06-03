@@ -1,11 +1,13 @@
 // importing React, and Component from library 'react'
 import React, {Component} from 'react';
-import {Router, Route} from "react-router"
-import { createBrowserHistory } from 'history'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+// import { createBrowserHistory } from 'history'
 // importing home and Header Component in App component
 import Home from './Home';
 import Header from './Header';
 import Root from './Root';
+import User from './User';
+import About from './About';
 
 // function formatName that has the user as an argument
 function formatName(user){
@@ -39,19 +41,19 @@ class App extends Component{
     }
     // render function
     render(){
-       return(
+        return(
         <div>
-            
+            <Router>
             <div className="container bg-dark">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Router history={createBrowserHistory}>
-                            <Route path={"user"} Component={"User"} />
-                            <Route path={"home"} Component={"Home"}/>
-                        </Router>
+                        {/* <Route path="/" component={Home}/> */}
+                        <Route path="/user" component={User} />
+                        <Route path="/about" component={About}/>
+                        <Root/>
                     </div>
                 </div>
-                 <div className="row">
+                <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
                         {/* <Header homeLink={this.state.homeLink}/> */}
                     </div>
@@ -67,8 +69,8 @@ class App extends Component{
                             />
                     </div>
                 </div>
-               
             </div>
+            </Router>
         </div>
        ); 
     }
